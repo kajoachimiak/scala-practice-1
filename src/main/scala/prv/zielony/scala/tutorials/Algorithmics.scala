@@ -13,13 +13,18 @@ object Algorithmics {
     */
 
   def factorial(input: Int): Option[Int] = {
-    if (input < 0) {
-      None
-    } else if (input == 0) {
-      Some(1)
-    } else {
-      Some(input * factorial(input - 1).get)
+    input match {
+      case 0 => Some(1)
+      case i if(i > 0) => Some(input * factorial(input - 1).get)
+      case _ => None
     }
+//    if (input < 0) {
+//      None
+//    } else if (input == 0) {
+//      Some(1)
+//    } else {
+//      Some(input * factorial(input - 1).get)
+//    }
   }
 
   /**
